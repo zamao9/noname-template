@@ -17,6 +17,9 @@ body
 .section_blue		
 	background-color: #4676bb3b
 
+
+
+
 /* Container */	
 .container
 	max-width: 560px
@@ -33,7 +36,10 @@ body
 		padding:  0 15px
 		margin:  0 auto 50px
 
-/* Title, Subtitle, Text, Img, a */	
+
+
+
+/* Title, Subtitle, Text, Img, a, Icon */	
 .title 
 	font-size: 25px
 	font-weight: 500
@@ -46,6 +52,7 @@ body
 .subtitle
 	font-size: 18px
 	text-align: center
+	font-weight: 300
 
 .text 
 	text-align: center
@@ -66,6 +73,20 @@ a
 	text-decoration: none
 	color: inherit	
 	line-height: 1
+
+.icon
+	width: 80px
+
+	margin-bottom: 30px
+	& img
+		width: 100%
+		height: 100%
+
+		display: block
+
+		object-fit: contain
+
+
 
 
 /* Examples */
@@ -91,6 +112,7 @@ a
 
 	&__text 	
 		max-width: 400px
+
 
 
 
@@ -179,6 +201,7 @@ a
 
 
 
+
 /* Products */	
 .products	
 
@@ -263,6 +286,177 @@ a
 
 
 
+/* Package Of Services */
+.package-of-services
+
+	&__content	
+		display: flex
+		flex-direction: column
+		justify-content: center
+
+		padding: 0 15px
+
+	&__items
+		min-height: 400px
+		max-width: 320px
+
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+
+		background-color: #8896ab3b
+		margin:0 auto 30px
+		padding: 30px 15px
+
+	&__title	
+		display: flex
+		align-items: baseline
+		justify-content: space-between
+		& h2
+			flex: 0 0 70%
+			font-size: 20px
+
+			margin-right: 30px
+		& span 
+			flex: 0 0 25%
+			font-size: 20px
+			& sup
+				font-size: 14px
+				opacity: 0.5
+
+	&__list
+		margin-bottom: 30px
+		& li
+			position: relative
+
+			text-transform: capitalize
+
+			padding-left: 25px
+			&::before
+				position: absolute
+				content: ''
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+
+				width: 15px
+				height: 1px
+
+				border-top: 1px solid rgba(70, 119, 187, 0.7)
+
+	&__btn
+		display: block
+		width: fit-content
+
+		font-size: 16px
+		color: #fff
+		text-transform: uppercase
+
+		transition: 0.2s ease
+		padding: 0.5em 1em 
+		margin: 0 auto
+		background-color: rgba(70, 119, 187, 0.7)
+		&:hover
+			opacity: 0.5
+
+
+
+
+/* Works */
+.works	
+
+	&__content
+		display: grid
+		grid-template-columns: minmax(auto, 320px)
+		justify-content: center
+		gap: 15px
+
+		padding: 0 15px
+
+	&__items	
+		position: relative
+
+		width: 100%
+		& img
+			width: 100%
+			height: 100%
+
+			display: block
+
+			object-fit: cover
+		&::after
+			position: absolute
+			content: ''
+			z-index: 1
+			top: 0
+			left: 0
+
+			width: 100%
+			height: 100%
+
+			transition: 0.2s ease
+			opacity: 0
+			background-color: rgba(0, 0, 0, 0.5)
+		&:hover::after
+			opacity: 1
+		&:hover .works__description
+			opacity: 1
+			pointer-events: all
+
+
+	&__description		
+		position: absolute
+		z-index: 2
+		bottom: 15px
+		left: 15px
+
+		max-width: 400px
+
+		transition: 0.2s ease
+		opacity: 0
+		pointer-events: none
+		padding: 5px
+
+	&__title	
+		color: #fff
+		font-size: 18px
+		text-align: left
+
+	&__text	
+		color: #fff
+		text-align: left
+
+
+
+
+/* Services */			
+.services	
+
+	&__content
+		display: grid
+		grid-template-columns: minmax(auto, 290px)
+		justify-content: center
+		gap: 5px
+
+	&__items
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		transition: 0.2s ease
+		padding: 30px 15px
+		background-color: rgba(70, 119, 187, 0.7)
+		&:hover
+			opacity: 0.5
+
+
+	&__text	
+		margin-bottom: 0
+
+
+
+
 @media (min-width: 560px)
 	/* Container */
 	.container
@@ -288,6 +482,23 @@ a
 	.products	
 		&__content
 			padding: 0
+
+	/* Package Of Services */
+	.package-of-services
+		&__content	
+			padding: 0
+
+	/* Works */			
+	.works	
+		&__content
+			padding: 0
+
+	/* Services */
+	.services	
+		&__content
+			padding: 0
+
+
 
 
 @media (min-width: 768px)
@@ -355,7 +566,43 @@ a
 			width: 100%
 			height: 200px
 
+	/* Package Of Services */
+	.package-of-services	
+		&__content
+			flex-direction: row
+			align-items: center
 
+		&__items
+			margin: 0 5px 0 0
+			&:last-child
+				margin-right: 0
+			&:nth-child(2)
+				min-height: 500px
+
+	/* Works */				
+	.works	
+		&__content
+			grid-template-columns: repeat(2, 1fr)
+			grid-template-rows: repeat(3, 220px)
+			gap: 5px
+
+		&__items	
+			&:first-child
+				grid-column-start: 1
+				grid-column-end: 3
+				grid-row-start: 1
+				grid-row-end: 1
+
+	/* Services */
+	.services	
+		&__content
+			grid-template-columns: repeat(3, 1fr)
+
+		&__items
+			align-items: flex-start
+
+		&__icon	
+			margin:  0 auto 30px
 
 
 
@@ -368,7 +615,19 @@ a
 	.container
 		max-width: 960px	
 
-	/* Examples */
+	/* Works */				
+	.works	
+		&__content
+			grid-template-columns: repeat(4, 1fr)
+			grid-template-rows: repeat(2, 250px)
+
+		&__items	
+			&:first-child
+				grid-column-start: 1
+				grid-column-end: 5
+				grid-row-start: 1
+				grid-row-end: 1
+
 
 
 
