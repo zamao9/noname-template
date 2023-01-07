@@ -1,9 +1,10 @@
 @import "normalize.scss"
 @import "reset.scss"
 
-$sectionBg: #ebebeb
+$sectionBg: #d2d6db
 $defaultColor: #222222
-
+$btnBg: #545454
+$btnBgHover: #54545480
 
 body 
 	font-family: 'Assistant', sans-serif
@@ -155,11 +156,11 @@ a
 		transition: 0.4s ease
 		padding: 0.5em 3em 0.5em 1em
 		margin-bottom: 0
-		background-color: #4676bb
+		background-color: $btnBg
 		&:hover
-			background-color: rgba(70, 119, 187, 0.7)
+			background-color: $btnBgHover
 		&.active
-			background-color: rgba(70, 119, 187, 0.7)
+			background-color: $btnBgHover
 
 	&__title
 		font-size: 20px
@@ -205,7 +206,7 @@ a
 
 		padding: 0 20px
 		margin-bottom: 0
-		background-color: rgba(70, 119, 187, 0.7)
+		background-color: $btnBgHover
 
 
 
@@ -313,7 +314,7 @@ a
 		justify-content: center
 		align-items: center
 
-		background-color: #8896ab3b
+		background-color: $sectionBg
 		margin:0 auto 30px
 		padding: 30px 15px
 
@@ -365,7 +366,7 @@ a
 		transition: 0.2s ease
 		padding: 0.5em 1em 
 		margin: 0 auto
-		background-color: rgba(70, 119, 187, 0.7)
+		background-color: $btnBg
 		&:hover
 			opacity: 0.5
 
@@ -406,7 +407,7 @@ a
 
 			transition: 0.2s ease
 			opacity: 0
-			background-color: rgba(0, 0, 0, 0.5)
+			background-color: rgba(0, 0, 0, 0.7)
 		&:hover::after
 			opacity: 1
 		&:hover .works__description
@@ -429,7 +430,7 @@ a
 
 	&__title	
 		color: #fff
-		font-size: 18px
+		font-size: 20px
 		text-align: left
 
 	&__text	
@@ -455,7 +456,7 @@ a
 
 		transition: 0.2s ease
 		padding: 30px 15px
-		background-color: rgba(70, 119, 187, 0.7)
+		background-color: $sectionBg
 		&:hover
 			opacity: 0.5
 
@@ -531,11 +532,11 @@ a
 		transition: 0.4s ease
 		padding: 0.5em 3em 0.5em 1em
 		margin-bottom: 0
-		background-color: #4676bb
+		background-color: $btnBg
 		&:hover
-			background-color: rgba(70, 119, 187, 0.7)
+			background-color: $btnBgHover
 		&.active
-			background-color: rgba(70, 119, 187, 0.7)
+			background-color: $btnBgHover
 	
 	&__arrow
 		position: absolute
@@ -578,7 +579,7 @@ a
 
 		padding: 0 20px
 		margin-bottom: 0
-		background-color: rgba(70, 119, 187, 0.7)
+		background-color: $btnBgHover
 		& ul 
 			text-align: center
 			& li a 
