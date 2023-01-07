@@ -457,7 +457,46 @@ a
 
 
 
-@media (min-width: 560px)
+/* Partners */	
+.partners	
+
+	&__wrapper
+		margin-bottom: 15px
+
+	&__slide
+		display: flex
+		justify-content: center
+		align-items: center
+
+	&__logo
+		width: 290px
+
+		transition: 0.2s ease
+		& img
+			width: 100%
+			height: 100%
+
+			display: block
+		&:hover
+			opacity: 0.5
+
+	&__pagination
+		position: static !important
+		transform: none !important
+
+		margin:  0 auto !important
+
+.swiper-pagination-bullet
+	width: 10px !important
+	height: 10px !important
+
+.swiper-pagination-bullet-active
+	background-color: #000 !important
+
+
+
+
+@media (min-width: 576px)
 	/* Container */
 	.container
 		max-width: 560px
@@ -497,6 +536,11 @@ a
 	.services	
 		&__content
 			padding: 0
+
+	/* Partners */
+	.partners	
+		&__logo
+			width: 230px
 
 
 
@@ -604,6 +648,10 @@ a
 		&__icon	
 			margin:  0 auto 30px
 
+	/* Partners */
+	.partners	
+		&__logo
+			width: 200px
 
 
 @media (min-width: 992px)
@@ -628,6 +676,10 @@ a
 				grid-row-start: 1
 				grid-row-end: 1
 
+	/* Partners */
+	.partners	
+		&__logo
+			width: 180px
 
 
 
@@ -635,5 +687,4 @@ a
 	/* Container */
 	.container	
 		max-width: 1140px
-
 
