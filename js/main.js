@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutUsHead = document.querySelectorAll(".about-us__accordeon-head"),
     aboutUsBody = document.querySelectorAll(".about-us__accordeon-body"),
     aboutUsArrow = document.querySelectorAll(".about-us__arrow"),
-    section = document.querySelector(".section_click");
+    footerHead = document.querySelectorAll(".footer__accordeon-head"),
+    footerBody = document.querySelectorAll(".footer__accordeon-body"),
+    footerArrow = document.querySelectorAll(".footer__arrow");
+
   const accordeon = (head, body, arrow) => {
     for (let i = 0; head.length > i; ++i) {
       head[i].addEventListener("click", (e) => {
@@ -38,10 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   accordeon(aboutUsHead, aboutUsBody, aboutUsArrow);
+  if (window.innerWidth < 768) {
+    accordeon(footerHead, footerBody, footerArrow);
+  } else {
+    false;
+  }
 
   /* Pa rtners Swiper */
   const swiperPartners = new Swiper(".partners__swiper", {
     loop: true,
+    autoplay: {
+      delay: 3000,
+    },
     breakpoints: {
       576: {
         slidesPerView: 2,
