@@ -188,8 +188,6 @@ a
 		text-transform: capitalize
 
 		transition: 0.2s ease
-		&:hover
-			opacity: 0.5
 
 	&__burger
 		position: fixed
@@ -300,8 +298,6 @@ a
 
 		transition: 0.2s ease
 		padding: 15px 0
-		&:hover
-			background-color: $headerBtn
 		&.active
 			background-color: $headerBtn
 
@@ -369,8 +365,6 @@ a
 		padding: 0.5em 3em 0.5em 1em
 		margin-bottom: 0
 		background-color: $btnBg
-		&:hover
-			background-color: $btnBgHover
 		&.active
 			background-color: $btnBgHover
 
@@ -751,8 +745,6 @@ a
 		padding: 0.5em 3em 0.5em 1em
 		margin-bottom: 0
 		background-color: $btnBg
-		&:hover
-			background-color: $btnBgHover
 		&.active
 			background-color: $btnBgHover
 	
@@ -1052,6 +1044,10 @@ a
 		&__burger
 			display: none
 
+		&__logo
+			&:hover
+				opacity: 0.5
+
 	/* Nav */
 	.nav	
 		opacity: 1
@@ -1074,6 +1070,12 @@ a
 			&:hover, &.active
 				background: none
 				opacity: 0.5
+
+	/* About Us */
+	.about-us	
+		&__accordeon-head
+			&:hover
+				background-color: $btnBgHover
 
 	/* Works */				
 	.works	
