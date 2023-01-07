@@ -13,7 +13,8 @@ body
 	line-height: 1.3
 	font-weight: 300
 	color: $defaultColor
-
+	&.active
+		overflow: hidden
 
 
 
@@ -97,6 +98,44 @@ a
 
 
 
+.up
+	position: fixed	
+	right: 15px
+	bottom: 150px
+	z-index: 3
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+	width: 30px
+	height: 30px
+
+	opacity: 0
+	pointer-events: none
+	transition: 0.4s ease
+	cursor: pointer
+
+	background-color: $btnBg
+	border-radius: 50%
+	&.active
+		opacity: 1
+		pointer-events: all
+	&:hover
+		opacity: 0.5	
+
+	&__items	
+		width: 10px
+		height: 10px
+
+		transform: rotate(45deg) translate(1px, 1px)
+
+		border-top: 1px solid #fff
+		border-left: 1px solid #fff
+
+
+
+
 /* Header */	
 .header
 	position: relative
@@ -122,6 +161,87 @@ a
 
 		background: rgba(0, 0, 0, 0.5)
 
+	&__head
+		width: 100%
+
+		position: fixed
+		z-index: 3
+		top: 0
+		left: 0
+
+		transition: 0.4s ease
+		&.scroll
+			background-color: $btnBg
+
+	&__head-content	
+		max-width: 1140px
+
+		margin: 0 auto
+		padding: 15px
+
+	&__logo	
+		display: block
+		width: fit-content
+
+		font-family: 'Cinzel Decorative', serif
+		font-size: 25px
+		font-weight: 700
+		color: #fff
+		text-transform: capitalize
+
+		transition: 0.2s ease
+		&:hover
+			opacity: 0.5
+
+	&__burger
+		position: fixed
+		z-index: 10
+		top: 15px
+		right: 15px
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+		width: 30px
+		height: 25px
+
+		transition: 0.4s ease
+		&.active
+			transform: rotateY(180deg)
+		&.active .header__burger-items
+			background: none
+		&.active .header__burger-items::before
+			transform: translateX(-50%) rotate(45deg)
+			top: 0
+		&.active .header__burger-items::after
+			transform: translateX(-50%) rotate(-45deg)
+			bottom: 0
+
+	&__burger-items	
+		width: 80%
+		height: 2px
+
+		position: relative
+
+		transition: 0.4s ease
+		background-color: #fff
+		&::before, &::after
+			position: absolute
+			content: ''
+			left: 50%
+			transform: translateX(-50%)
+
+			width: 100%
+			height: 100%
+			
+			transition: 0.4s ease
+			background-color: #fff
+		&::before
+			top: 8px
+		&::after
+			bottom: 8px	
+
 	&__offer
 		position: relative
 		z-index: 2	
@@ -142,6 +262,51 @@ a
 
 		text-align: center
 		background-color: $headerBtn !important
+
+
+
+
+/* Nav */	
+.nav	
+	position: fixed
+	top: -30%
+	left: 0
+	z-index: 5
+
+	width: 100%
+	height: 100vh
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+	opacity: 0
+	pointer-events: none
+	transition: 0.4s ease
+
+	background-color: $btnBg
+	& ul
+		width: 100%
+	&.active	
+		top: 0
+		opacity: 1
+		pointer-events: all
+
+	&__link
+		display: block
+		width: 100%
+
+		color: #fff
+		text-align:  center
+		text-transform: uppercase
+
+		transition: 0.2s ease
+		padding: 15px 0
+		&:hover
+			background-color: $headerBtn
+		&.active
+			background-color: $headerBtn
+
 
 
 
@@ -264,6 +429,10 @@ a
 .products	
 
 	&__content
+		display: flex
+		flex-direction: column
+		align-items: center
+
 		padding: 0 15px
 
 	&__items
@@ -271,7 +440,9 @@ a
 		flex-direction: column
 		align-items: center
 
-		margin-bottom: 30px
+		max-width: 290px
+
+		margin: 0 auto 30px
 		& a
 			position: relative
 
@@ -308,13 +479,13 @@ a
 				border-top: 1px solid $defaultColor
 				border-right: 1px solid $defaultColor
 				animation: arrowX 1s linear infinite
-	@keyframes arrowX
-		0%
-			right: -20px
-		50%	
-			right: -30px
-		100%
-			right: -20px
+			@keyframes arrowX
+					0%
+						right: -20px
+					50%	
+						right: -30px
+					100%
+						right: -20px
 
 	&__img	
 		margin-bottom: 15px
@@ -676,6 +847,9 @@ a
 		&__content
 			padding: 0
 
+		&__items	
+			max-width: 400px
+
 	/* Package Of Services */
 	.package-of-services
 		&__content	
@@ -757,13 +931,14 @@ a
 	/* Products */
 	.products	
 		&__content
-			display: flex
 			flex-direction: row
 			justify-content: space-between
 
 		&__items	
 			align-items: flex-start
 			flex: 0 0 32%
+
+			margin: 0
 
 		&__img 
 			width: 100%
@@ -863,6 +1038,38 @@ a
 	/* Container */
 	.container
 		max-width: 960px	
+	
+	/* Header */
+	.header	
+		&__head-content
+			display: flex
+			justify-content: space-between
+
+		&__burger
+			display: none
+
+	/* Nav */
+	.nav	
+		opacity: 1
+		pointer-events: all
+		position: static
+		top: 0
+		height: auto
+		background: none
+
+		align-items: flex-end
+		flex:  0 0 80%
+		& ul 
+			display: flex
+			justify-content: space-between
+			
+		
+		&__link
+			width: fit-content
+			padding: 0
+			&:hover, &.active
+				background: none
+				opacity: 0.5
 
 	/* Works */				
 	.works	

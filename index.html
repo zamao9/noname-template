@@ -14,8 +14,83 @@
   </head>
 
   <body>
+    <div class="up" data-scroll="#home">
+      <div class="up__items"></div>
+    </div>
+
     <!-- Header -->
-    <header class="section header">
+    <header class="section header" id="home">
+      <div class="header__head">
+        <div class="header__head-content">
+          <a href="index.html" class="header__logo">
+            <h1>some logo</h1>
+          </a>
+
+          <nav class="nav">
+            <ul>
+              <li>
+                <a
+                  class="nav__link"
+                  href="#"
+                  data-scroll="#examples"
+                  data-section="examples"
+                  >examples</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav__link"
+                  href="#"
+                  data-scroll="#about-us"
+                  data-section="about-us"
+                  >about us</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav__link"
+                  href="#"
+                  data-scroll="#products"
+                  data-section="products"
+                  >products</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav__link"
+                  href="#"
+                  data-scroll="#package-od-services"
+                  data-section="package-od-services"
+                  >package od services</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav__link"
+                  href="#"
+                  data-scroll="#works"
+                  data-section="works"
+                  >works</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav__link"
+                  href="#"
+                  data-scroll="#services"
+                  data-section="services"
+                  >services</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header__burger">
+        <div class="header__burger-items"></div>
+      </div>
+
       <div class="header__offer">
         <div class="title header__title">
           <h1>some inforamtion about company</h1>
@@ -31,7 +106,7 @@
     </header>
 
     <!--Examples-->
-    <section class="section section_blue">
+    <section class="section section_blue" id="examples" data-section="examples">
       <div class="container examples">
         <div class="container__header">
           <div class="title container__title">
@@ -99,7 +174,7 @@
     </section>
 
     <!--About Us-->
-    <section class="section">
+    <section class="section" id="about-us" data-section="about-us">
       <div class="container about-us">
         <div class="container__header">
           <div class="title container__title">
@@ -175,7 +250,7 @@
     </section>
 
     <!-- Latest Products -->
-    <section class="section section_blue">
+    <section class="section section_blue" id="products" data-section="products">
       <div class="container products">
         <div class="container__header">
           <div class="title container__title">
@@ -249,7 +324,11 @@
     </section>
 
     <!-- Package Of Services -->
-    <section class="section">
+    <section
+      class="section"
+      id="package-od-services"
+      data-section="package-od-services"
+    >
       <div class="container package-of-services">
         <div class="container__header">
           <div class="title container__title">
@@ -349,7 +428,7 @@
     </section>
 
     <!-- Works -->
-    <section class="section section_blue">
+    <section class="section section_blue" id="works" data-section="works">
       <div class="container works">
         <div class="container__header">
           <div class="title container__title">
@@ -440,7 +519,7 @@
     </section>
 
     <!-- Services -->
-    <section class="section">
+    <section class="section" id="services" data-section="services">
       <div class="container services">
         <div class="container__header">
           <div class="title container__title">
@@ -673,13 +752,14 @@
               <ul>
                 <li><a href="">Subscribe To Our Newsletter</a></li>
                 <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Terms & Conditions</a></li>
+                <li><a href="">Terms and Conditions</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </body>
