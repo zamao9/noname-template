@@ -5,6 +5,7 @@ $sectionBg: #d2d6db
 $defaultColor: #222222
 $btnBg: #545454
 $btnBgHover: #54545480
+$headerBtn: #999999
 
 body 
 	font-family: 'Assistant', sans-serif
@@ -93,6 +94,54 @@ a
 
 		object-fit: contain
 
+
+
+
+/* Header */	
+.header
+	position: relative
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+	width: 100%
+	height: 100vh
+
+	padding: 0
+	background: url('../img/background.jpg') center / cover no-repeat
+	&:after
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		z-index: 1
+
+		width: 100%
+		height: 100vh
+
+		background: rgba(0, 0, 0, 0.5)
+
+	&__offer
+		position: relative
+		z-index: 2	
+
+		max-width: 560px
+
+		padding: 0 15px
+
+	&__title	
+		font-size: 35px
+		color: #fff
+
+	&__text	
+		color: #fff
+
+	&__btn
+		min-width: 200px
+
+		text-align: center
+		background-color: $headerBtn !important
 
 
 
@@ -355,19 +404,19 @@ a
 
 				border-top: 1px solid rgba(70, 119, 187, 0.7)
 
-	&__btn
-		display: block
-		width: fit-content
+.btn
+	display: block
+	width: fit-content
 
-		font-size: 16px
-		color: #fff
-		text-transform: uppercase
+	font-size: 16px
+	color: #fff
+	text-transform: uppercase
 
-		transition: 0.2s ease
-		padding: 0.5em 1em 
-		margin: 0 auto
-		background-color: $btnBg
-		&:hover
+	transition: 0.2s ease
+	padding: 0.5em 1em 
+	margin: 0 auto
+	background-color: $btnBg
+	&:hover
 			opacity: 0.5
 
 
@@ -606,6 +655,11 @@ a
 	/* Img */
 	.img 
 		width: 400px	
+
+	/* Header */	
+	.header	
+		&__offer
+			padding: 0 
 
 	/* Examples */
 	.examples	
